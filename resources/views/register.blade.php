@@ -47,7 +47,7 @@
                        
                         <div class="form-group">
                             <label for=""><strong>Konfirmasi Password</strong></label>
-                            <input type="password" name="password_confirmation" class="form-control" placeholder="password">
+                            <input type="password" name="password_confirmation" class="form-control" placeholder="konfimasi password">
                         </div>
                     </div>
                     <div class="cart-footer">

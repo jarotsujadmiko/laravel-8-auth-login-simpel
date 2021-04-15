@@ -11,7 +11,7 @@ use App\Models\User;
 
 class AuthController extends Controller
 {
-    public function showFormController(){
+    public function showFormLogin(){
         // cek session field di users, nanti bisa dipanggil via Auth
         if (Auth::check()){
             //login sukkses
@@ -27,7 +27,7 @@ class AuthController extends Controller
             'password'  =>'required|string'
         ];
 
-        $message=[
+        $messages=[
             'email.required'    =>'email wajib di isi',
             'email.email'       =>'email tidak valid',
             'password.required' =>'password wajib di isi',
@@ -44,7 +44,7 @@ class AuthController extends Controller
             'password'  =>$request->input('password')
         ];
 
-        Auth::attemt($data);
+        Auth::attempt($data);
 
         if(Auth::check()){
             return redirect()->route('home');
@@ -63,7 +63,7 @@ class AuthController extends Controller
         $rules=[
             'name'      =>'required|min:3|max:30',
             'email'     =>'required|email|unique:users',
-            'passsword' =>'required|confirmed'     
+            'password' =>'required|confirmed'     
         ];
 
         $messages=[

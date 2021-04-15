@@ -35,6 +35,7 @@
                             <div class="alert alert-success">
                                 {{ Session::get('success') }}
                             </div>
+                        @endif
                         
                         @if(Session::has('error'))
                             <div class="alert alert-danger">
